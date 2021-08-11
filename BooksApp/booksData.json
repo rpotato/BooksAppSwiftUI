@@ -1,0 +1,11 @@
+[
+    {"title": "book1", "coverImage": "book1", "category": "Biography", "leftPage": 89, "totalPage": 114},
+    {"title": "book2", "coverImage": "book2", "category": "Philosophy", "leftPage": 270, "totalPage": 1620},
+    {"title": "book3", "coverImage": "book3", "category": "Philosophy",  "finishedDate": 642096000, "leftPage": 0, "totalPage": 114},
+    {"title": "book4", "coverImage": "book4", "category": "Biography", "finishedDate": 642096000, "leftPage": 0, "totalPage": 114},
+    {"title": "book5", "coverImage": "book5", "category": "History", "finishedDate": 642096000, "leftPage": 0, "totalPage": 114},
+    {"title": "book6", "coverImage": "book6", "category": "History", "finishedDate": 642096000, "leftPage": 0, "totalPage": 114},
+    {"title": "book7", "coverImage": "book7", "category": "Philosophy", "finishedDate": 642096000, "leftPage": 0, "totalPage": 114},
+    {"title": "book8", "coverImage": "book8", "category": "Philosophy", "finishedDate": 642096000, "leftPage": 0, "totalPage": 114},
+    {"title": "book9", "coverImage": "book9", "category": "Biography", "finishedDate": 642096000, "leftPage": 0, "totalPage": 114}
+]

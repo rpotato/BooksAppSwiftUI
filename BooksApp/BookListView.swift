@@ -10,7 +10,6 @@ import SwiftUI
 struct BookListItem: View {
     var book: Book
     var body: some View {
-        
         HStack {
             BookCover(coverImage: book.coverImage, size: .small)
             

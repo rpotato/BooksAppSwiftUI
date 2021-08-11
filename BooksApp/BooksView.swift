@@ -5,8 +5,6 @@
 //  Created by hlli on 2021/8/6.
 //
 
-// https://github.com/SikandAlex/BooksAppSwiftUI
-
 import SwiftUI
 
 let lightGray = Color(hex: "#F1F5FA")
@@ -137,17 +135,7 @@ func convertDateString(_ str: String) -> Date? {
 }
 
 struct BooksView: View {
-    var books: [Book] = [
-        Book(title: "book1", coverImage: "book1", category: .biography, leftPage: 89, totalPage: 114),
-        Book(title: "book2", coverImage: "book2", category: .philosophy, leftPage: 270, totalPage: 1620),
-        Book(title: "book3", coverImage: "book3", category: .philosophy,  finishedDate: convertDateString("2021/03/03"), leftPage: 0, totalPage: 114),
-        Book(title: "book4", coverImage: "book4", category: .biography, finishedDate: convertDateString("2021/04/29"), leftPage: 0, totalPage: 114),
-        Book(title: "book5", coverImage: "book5", category: .history, finishedDate: convertDateString("2021/05/08"), leftPage: 0, totalPage: 114),
-        Book(title: "book6", coverImage: "book6", category: .history, finishedDate: convertDateString("2021/05/08"), leftPage: 0, totalPage: 114),
-        Book(title: "book7", coverImage: "book7", category: .philosophy, finishedDate: convertDateString("2021/05/08"), leftPage: 0, totalPage: 114),
-        Book(title: "book8", coverImage: "book8", category: .philosophy, finishedDate: convertDateString("2021/05/08"), leftPage: 0, totalPage: 114),
-        Book(title: "book9", coverImage: "book9", category: .biography, finishedDate: convertDateString("2021/05/08"), leftPage: 0, totalPage: 114)
-    ]
+    var books: [Book] = myBooks
     
     var inProgress: [Book] {
         books.filter { !$0.finished }
@@ -176,17 +164,17 @@ struct BooksView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                lightGray.edgesIgnoringSafeArea(.all)
-                VStack(alignment: .leading) {
-                    HStack {
-                        ForEach(Category.allCases, id: \.self) {category in
-                            CategoryButton(category: category, selected: category == selectedCategory) { () in
-                                selectedCategory = category
-                            }
+            VStack(alignment: .leading) {
+                HStack {
+                    ForEach(Category.allCases, id: \.self) {category in
+                        CategoryButton(category: category, selected: category == selectedCategory) { () in
+                            selectedCategory = category
                         }
-                    }.padding(.horizontal)
-                    
+                    }
+                }.padding(.horizontal)
+                
+                ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
+
                     Section(title: "In Progress", books: filteredInProgress)
                     
                     Section(title: "Finished", books: filteredFinished)
@@ -194,7 +182,6 @@ struct BooksView: View {
                     Spacer()
                 }
             }
-//            .navigationBarHidden(true)
             .navigationTitle("My Books")
         }
 

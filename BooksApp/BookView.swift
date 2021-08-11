@@ -10,7 +10,7 @@ import SwiftUI
 struct BookView: View {
     var book: Book
     var body: some View {
-        VStack(alignment: .center) {
+        ScrollView {
             BookCover(coverImage: book.coverImage, size: .big)
             
             Text(book.title)

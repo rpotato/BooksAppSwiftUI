@@ -7,16 +7,16 @@
 
 import Foundation
 
-enum Category: String, CaseIterable {
+enum Category: String, CaseIterable, Codable {
     case all = "All Genres"
     case history = "History"
     case philosophy = "Philosophy"
     case biography = "Biography"
 }
 
-struct Book: Hashable, Identifiable {
+struct Book: Hashable, Identifiable, Codable {
     var id: String {
-        coverImage
+        title
     }
     
     var title: String
